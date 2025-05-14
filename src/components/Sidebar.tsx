@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHome, FaUser, FaCompass, FaUpload } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
     return (
@@ -13,18 +14,18 @@ const Sidebar: React.FC = () => {
             />
 
             <nav className="flex flex-col space-y-4 mt-4 w-full">
-                <button className="flex items-center gap-2 hover:text-[#FF6B6B]">
+                <Link to="/" className="flex items-center gap-2 hover:text-[#FF6B6B]">
                     <FaHome /> <span className="hidden sm:inline">Home</span>
-                </button>
-                <button className="flex items-center gap-2 hover:text-[#FF6B6B]">
+                </Link>
+                <Link to="/explore" className="flex items-center gap-2 hover:text-[#FF6B6B]">
                     <FaCompass /> <span className="hidden sm:inline">Explore</span>
-                </button>
-                <button className="flex items-center gap-2 hover:text-[#FF6B6B]">
+                </Link>
+                <Link to="/upload" className="flex items-center gap-2 hover:text-[#FF6B6B]">
                     <FaUpload /> <span className="hidden sm:inline">Upload</span>
-                </button>
-                <button className="flex items-center gap-2 hover:text-[#FF6B6B]">
+                </Link>
+                <Link to="/profile" className="flex items-center gap-2 hover:text-[#FF6B6B]">
                     <FaUser /> <span className="hidden sm:inline">Profile</span>
-                </button>
+                </Link>
             </nav>
         </aside>
     );
