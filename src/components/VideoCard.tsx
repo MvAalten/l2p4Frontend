@@ -3,27 +3,30 @@ import { FaHeart, FaComment, FaShare, FaPlus } from "react-icons/fa";
 
 const VideoCard: React.FC = () => {
     return (
-        <div className="relative w-full max-w-[400px] aspect-[9/16] bg-[#40434E] rounded-2xl overflow-hidden shadow-lg">
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 text-center">
-                <p className="text-base sm:text-lg">Workout Video Placeholder</p>
+        <div className="relative w-full max-w-[500px] aspect-[9/16] bg-[#40434E] rounded-2xl overflow-hidden shadow-lg">
+            {/* Overlay Text */}
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-6 text-center">
+                <p className="text-lg sm:text-xl">Workout Video Placeholder</p>
             </div>
 
-            <div className="absolute bottom-24 left-4 text-sm sm:text-base space-y-1 w-2/3">
+            {/* Video Info */}
+            <div className="absolute bottom-28 left-6 text-sm sm:text-base space-y-1 w-2/3">
                 <p className="font-bold">@fitbeast</p>
                 <p>“No excuses. Just results.”</p>
             </div>
 
-            <div className="absolute bottom-24 right-4 flex flex-col items-center gap-4">
-                <button className="text-[#FF6B6B] text-xl hover:scale-110 transition-transform">
+            {/* Social Buttons */}
+            <div className="absolute bottom-12 right-6 flex flex-col items-center gap-4">
+                <button className="text-[#FF6B6B] text-xl sm:text-2xl hover:scale-110 transition-transform">
                     <FaHeart />
                 </button>
-                <button className="text-[#B9CFD4] text-xl hover:scale-110 transition-transform">
+                <button className="text-[#B9CFD4] text-xl sm:text-2xl hover:scale-110 transition-transform">
                     <FaComment />
                 </button>
-                <button className="text-[#B9CFD4] text-xl hover:scale-110 transition-transform">
+                <button className="text-[#B9CFD4] text-xl sm:text-2xl hover:scale-110 transition-transform">
                     <FaShare />
                 </button>
-                <button className="mt-4 bg-[#FF6B6B] p-3 rounded-full text-white text-sm font-bold hover:scale-110 transition-transform">
+                <button className="mt-4 bg-[#FF6B6B] p-4 rounded-full text-white text-sm sm:text-base font-bold hover:scale-110 transition-transform">
                     <FaPlus />
                 </button>
             </div>
