@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaUser, FaCompass, FaUpload } from "react-icons/fa";
+import { FaHome, FaUser, FaCompass, FaUpload, FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
@@ -25,6 +25,9 @@ const Sidebar: React.FC = () => {
                 </Link>
                 <Link to="/profile" className="flex items-center gap-2 hover:text-[#FF6B6B]">
                     <FaUser /> <span className="hidden sm:inline">Profile</span>
+                </Link>
+                <Link to="/login" className="flex items-center gap-2 hover:text-[#FF6B6B]">
+                    <FaSignInAlt /> <span className="hidden sm:inline">Login</span>
                 </Link>
             </nav>
         </aside>

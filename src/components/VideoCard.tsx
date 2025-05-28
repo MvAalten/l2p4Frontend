@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/firebase.tsx";
 import { FaHeart, FaComment, FaShare, FaPlus } from "react-icons/fa";
 
-const VideoCard: React.FC = () => {
+export default function UserCard() {
+    const [userName, setUserName] = useState("");
+
+    useEffect(() => {
+        const fetchUserName = async () => {
+            try {
+                const docRef = doc(db, "test");
+                const Hold = await getDoc(docRef);
+
+                if (Hold.exists()) {
+                    setUserName(Hold.data().test);
+                } else {
+                    setUserName("User not found");
+                }
+            } catch (error) {
+                console.error("Error fetching user name:", error);
+                setUserName("Error");
+            }
+        };
+
+        fetchUserName();
+    }, []);
+
     return (
         <div className="relative w-full max-w-[500px] aspect-[9/16] bg-[#40434E] rounded-2xl overflow-hidden shadow-lg">
             {/* Overlay Text */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-6 text-center">
-                <p className="text-lg sm:text-xl">Workout Video Placeholder</p>
+                <p className="text-lg sm:text-xl">{userName || "Loading..."}</p>
             </div>
 
             {/* Video Info */}
@@ -32,6 +56,4 @@ const VideoCard: React.FC = () => {
             </div>
         </div>
     );
-};
-
-export default VideoCard;
+}

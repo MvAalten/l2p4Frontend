@@ -5,6 +5,7 @@ import HomePage from "./HomePage";
 import ExplorePage from "./ExplorePage";
 import UploadPage from "./UploadPage";
 import ProfilePage from "./ProfilePage.tsx";
+import LoginPage from "./LoginPage.tsx"; // <-- ✅ Import LoginPage
 
 const GymTokMainPage: React.FC = () => {
     return (
@@ -17,6 +18,7 @@ const GymTokMainPage: React.FC = () => {
                         <Route path="/explore" element={<ExplorePage />} />
                         <Route path="/upload" element={<UploadPage />} />
                         <Route path="/profile" element={<ProfilePage />} />
+                        <Route path="/login" element={<LoginPage />} />
                     </Routes>
                 </main>
             </div>
